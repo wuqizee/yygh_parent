@@ -1,0 +1,30 @@
+server:
+  port: 8202
+spring:
+  application:
+    name: service-cmn
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yygh_cmn?useSSL=false
+    username: root
+    password: root
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  servlet:
+    multipart:
+      max-request-size: 2MB
+      max-file-size: 2MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

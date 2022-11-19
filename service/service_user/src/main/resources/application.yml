@@ -1,0 +1,31 @@
+server:
+  port: 8160
+spring:
+  application:
+    name: service-user
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yygh_user?useSSL=false
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+  redis:
+    database: 1
+    host: localhost
+    port: 6379
+    timeout: 1800000
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+weixi:
+  appid: wxed9954c01bb89b47
+  secret: a7482517235173ddb4083788de60b90e
+  uri: http://localhost:8160/user/weixi/callback

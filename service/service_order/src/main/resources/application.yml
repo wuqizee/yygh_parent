@@ -1,0 +1,37 @@
+server:
+  port: 8807
+spring:
+  application:
+    name: service-order
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yygh_order?useSSL=false
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+  rabbitmq:
+    host: 192.168.244.128
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/com/atguigu/yygh/order/mapper/xml/*Mapper.xml
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+weixin:
+  pay:
+    appid: wx74862e0dfcf69954 #关联的公众号appid
+    partner: 1558950191 #商户号
+    partnerkey: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb #商户key
+    cert: classpath:\cert\apiclient_cert.p12

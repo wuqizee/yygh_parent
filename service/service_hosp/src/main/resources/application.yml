@@ -1,0 +1,41 @@
+server:
+  port: 8201
+spring:
+  application:
+    name: service-hosp
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yygh_hosp?useSSL=false
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  data:
+    mongodb:
+      uri: mongodb://192.168.244.128:27017/test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  rabbitmq:
+    host: 192.168.244.128
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    org.springframework.data.mongodb.core: debug
+feign:
+  sentinel:
+    enabled: true
+ribbon:
+  ReadTimeout:  3000
+  ConnectTimeout: 3000

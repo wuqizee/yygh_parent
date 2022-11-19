@@ -1,0 +1,24 @@
+server:
+  port: 8204
+spring:
+  application:
+    name: service-sms
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+  redis:
+    database: 1
+    host: localhost
+    port: 6379
+    timeout: 1800000
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  rabbitmq:
+    host: 192.168.244.128
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
